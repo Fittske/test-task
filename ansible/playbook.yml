@@ -1,0 +1,9 @@
+---
+- name: Initial config
+  hosts: localhost
+  remote_user: ubuntu
+  become: yes
+  roles:
+    - Initialization
+    - Docker
+    - Deployment

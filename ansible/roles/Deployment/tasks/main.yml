@@ -1,0 +1,11 @@
+---
+
+- name: Clone files
+  copy:
+    src: "{{ inventory_dir | dirname }}"
+    dest: /home/ubuntu
+    mode: 0644
+
+- name: Run app
+  shell: cd /home/ubuntu/{{inventory_dir | dirname | basename}} && docker-compose up -d --build --remove-orphans
+
